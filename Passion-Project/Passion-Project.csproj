@@ -184,10 +184,56 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PlayerDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406050353173_InitialCreate.cs" />
+    <Compile Include="Migrations\202406050353173_InitialCreate.designer.cs">
+      <DependentUpon>202406050353173_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406060345356_team.cs" />
+    <Compile Include="Migrations\202406060345356_team.designer.cs">
+      <DependentUpon>202406060345356_team.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406060355149_teambudget.cs" />
+    <Compile Include="Migrations\202406060355149_teambudget.designer.cs">
+      <DependentUpon>202406060355149_teambudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406060358015_teambudgetupdate.cs" />
+    <Compile Include="Migrations\202406060358015_teambudgetupdate.designer.cs">
+      <DependentUpon>202406060358015_teambudgetupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406060406034_players.cs" />
+    <Compile Include="Migrations\202406060406034_players.designer.cs">
+      <DependentUpon>202406060406034_players.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406060412276_playerFK.cs" />
+    <Compile Include="Migrations\202406060412276_playerFK.designer.cs">
+      <DependentUpon>202406060412276_playerFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406070404407_Fixture.cs" />
+    <Compile Include="Migrations\202406070404407_Fixture.designer.cs">
+      <DependentUpon>202406070404407_Fixture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406070426070_Scorers.cs" />
+    <Compile Include="Migrations\202406070426070_Scorers.designer.cs">
+      <DependentUpon>202406070426070_Scorers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406070450103_update.cs" />
+    <Compile Include="Migrations\202406070450103_update.designer.cs">
+      <DependentUpon>202406070450103_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406070544280_test.cs" />
+    <Compile Include="Migrations\202406070544280_test.designer.cs">
+      <DependentUpon>202406070544280_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Fixture.cs" />
+    <Compile Include="Models\MatchxTeams.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Team.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -294,6 +340,38 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202406050353173_InitialCreate.resx">
+      <DependentUpon>202406050353173_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406060345356_team.resx">
+      <DependentUpon>202406060345356_team.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406060355149_teambudget.resx">
+      <DependentUpon>202406060355149_teambudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406060358015_teambudgetupdate.resx">
+      <DependentUpon>202406060358015_teambudgetupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406060406034_players.resx">
+      <DependentUpon>202406060406034_players.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406060412276_playerFK.resx">
+      <DependentUpon>202406060412276_playerFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406070404407_Fixture.resx">
+      <DependentUpon>202406070404407_Fixture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406070426070_Scorers.resx">
+      <DependentUpon>202406070426070_Scorers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406070450103_update.resx">
+      <DependentUpon>202406070450103_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406070544280_test.resx">
+      <DependentUpon>202406070544280_test.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

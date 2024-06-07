@@ -112,3 +112,14 @@ C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion-Pr
 C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion-Project.csproj.CopyComplete
 C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion-Project.dll
 C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion-Project.pdb
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.InitialCreate.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion-Project.csproj.GenerateResource.cache
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.team.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.teambudget.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.teambudgetupdate.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.players.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.playerFK.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.Fixture.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.Scorers.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.update.resources
+C:\Users\georg\source\repos\Passion-Project\Passion-Project\obj\Debug\Passion_Project.Migrations.test.resources
