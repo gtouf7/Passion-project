@@ -16,7 +16,14 @@ namespace Passion_Project.Models
         public string TeamName { get; set; }
         public string TeamCountry { get; set; }
         public string TeamBudget { get; set; }
-        
-        //add number of players, total goals later
+    }
+
+    //DTO section
+    public class TeamDTO
+    {
+        public int TeamId { get; set; }
+        public string TeamName { get; set; }
+        public string TeamCountry { get; set; }
+        public string TeamBudget { get; set; }
     }
 }

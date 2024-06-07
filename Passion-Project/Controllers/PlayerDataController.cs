@@ -2,6 +2,9 @@
 using Passion_Project.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -47,6 +50,7 @@ namespace Passion_Project.Controllers
             return PlayerDTOs;
         }
 
+        //FIND A PLAYER BY ID
         //GET: api/PlayerData/FindPlayer/{id}
         [ResponseType(typeof(Player))]
         [HttpGet]
@@ -54,6 +58,10 @@ namespace Passion_Project.Controllers
         public IHttpActionResult FindPlayer(int id)
         {
             Player Player = db.Players.Find(id);
+            if (Player == null)
+            {
+                return NotFound();
+            }
 
             PlayerDTO PlayerDTO = new PlayerDTO()
             {
@@ -62,13 +70,91 @@ namespace Passion_Project.Controllers
                 PlayerPosition = Player.PlayerPosition,
                 TeamName = Player.Team.TeamName
             };
+            return Ok(PlayerDTO);
+        }
 
-            if (Player == null)
+        //ADDING A PLAYER
+        // POST: api/PlayerData/AddPlayer
+        [ResponseType(typeof(Player))]
+        [HttpPost]
+        public IHttpActionResult AddPlayer(Player player)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.Players.Add(player);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = player.PlayerId }, player);
+        }
+
+        //UPDATE A PLAYER
+        // POST: api/PlayerData/UpdatePlayer/{id}
+        [ResponseType(typeof(Player))]
+        [HttpPost]
+        public IHttpActionResult UpdatePlayer(int id, Player player)
+        {
+            Debug.WriteLine("Update method reached");
+            if (!ModelState.IsValid)
+            {
+                Debug.WriteLine("Model State invalid");
+                return BadRequest(ModelState);
+            }
+            if ( id != player.PlayerId)
+            {
+                Debug.WriteLine("ID mismatch");
+                Debug.WriteLine("GET parameter" + id);
+                Debug.WriteLine("POST parameter" +  player.PlayerId);
+                Debug.WriteLine("POST parameter" + player.PlayerName);
+                Debug.WriteLine("POST parameter" + player.PlayerPosition);
+                Debug.WriteLine("POST parameter" + player.PlayerTeamId);
+                return BadRequest();
+            }
+            db.Entry(player).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PlayerExists(id))
+                {
+                    Debug.WriteLine("Player Not Found");
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            Debug.WriteLine("None of the conditions triggered");
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        private bool PlayerExists(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // DELETE A PLAYER 
+        // POST: api/PlayerData/DeletePlayer/{id}
+        [ResponseType(typeof(Player))]
+        [HttpPost]
+        public IHttpActionResult DeletePlayer(int id)
+        {
+            Player player = db.Players.Find(id);
+            if (player == null)
             {
                 return NotFound();
             }
 
-            return Ok(PlayerDTO);
+            db.Players.Remove(player);
+            db.SaveChanges();
+
+            return Ok();
         }
     }
 }
