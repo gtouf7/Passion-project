@@ -29,7 +29,7 @@ namespace Passion_Project.Controllers
 
         [HttpGet]
         [Route("api/PlayerData/ListPlayers")]
-        public List<PlayerDTO> ListPlayers()
+        public IHttpActionResult ListPlayers()
         {   
             //players list output
             List<Player> Players = db.Players.ToList();
@@ -47,7 +47,7 @@ namespace Passion_Project.Controllers
 
                 PlayerDTOs.Add(Dto);
             }
-            return PlayerDTOs;
+            return Ok(PlayerDTOs);
         }
 
         //FIND A PLAYER BY ID

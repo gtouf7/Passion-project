@@ -19,7 +19,7 @@ namespace Passion_Project.Controllers
         // GET: Player/PlayerList
         public ActionResult PlayerList()
         {
-            string url = "/PlayerData/ListPlayers";
+            string url = "PlayerData/ListPlayers";
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             IEnumerable<PlayerDTO> players = response.Content.ReadAsAsync<IEnumerable<PlayerDTO>>().Result;
