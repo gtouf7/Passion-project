@@ -1,0 +1,23 @@
+﻿@model Passion_Project.Models.TeamDTO
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New</h2>
+<form method="post">
+    <div>
+        <label for="TeamName">Team Name</label>
+        <input type="text" name="TeamName" placeholder="Team FC" />
+    </div>
+    <div>
+        <label for="TeamCountry">Team Country</label>
+        <input type="text" name="TeamCountry" placeholder="Country" />
+    </div>
+    <div>
+        <label for="TeamBudget">Team Budget</label>
+        <input type="text" name="TeamBudget" placeholder="$125M" />
+    </div>
+    <button type="submit">Create Team</button>
+</form>
+<a href="/Team/TeamList">Go Back</a>
+

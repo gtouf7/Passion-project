@@ -3,11 +3,11 @@
     ViewBag.Title = "PlayerList";
 }
 
-<h2>PlayerList</h2>
+<h2>Players List</h2>
 <a href="/Player/New">Add Player</a>
 @foreach(var player in Model)
             {
-                <h3><a href="/Player/Info/@player.PlayerId">@player.PlayerName</a></h3>
+                <h4><a href="/Player/Info/@player.PlayerId">@player.PlayerName</a></h4>
                 <div>Position: @player.PlayerPosition</div>
                 <div>Current club: @player.TeamName</div>
             }

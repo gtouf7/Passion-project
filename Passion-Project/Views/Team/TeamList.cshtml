@@ -3,12 +3,14 @@
     ViewBag.Title = "TeamList";
 }
 
-<h2>Team List</h2>
+<h2>Current Teams</h2>
 <a href="/Team/New">Add Team</a>
 @foreach(var team in Model)
             {
-                <h3><a href="/Team/Info/@team.TeamId">@team.TeamName</a></h3>
+                <h4><a href="/Team/Info/@team.TeamId">@team.TeamName</a></h4>
                 <div>Country: @team.TeamCountry</div>
                 <div>Team Budget: @team.TeamBudget</div>
+                <a href="/Team/Delete">Delete Team</a>
             }
+
 
