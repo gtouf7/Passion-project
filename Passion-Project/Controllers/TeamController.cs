@@ -1,30 +1,31 @@
-﻿using System;
+﻿using Passion_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
-using Passion_Project.Models;
 
 namespace Passion_Project.Controllers
 {
-    public class PlayerController : Controller
+    public class TeamController : Controller
     {
         private static readonly HttpClient client;
-        static PlayerController()
+
+        static TeamController()
         {
             client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:44300/api/");
         }
-        // GET: Player/PlayerList
-        public ActionResult PlayerList()
+        //GET: Team/TeamList
+        public ActionResult TeamList()
         {
-            string url = "PlayerData/ListPlayers";
+            string url = "TeamData/ListTeams";
             HttpResponseMessage response = client.GetAsync(url).Result;
 
-            IEnumerable<PlayerDTO> players = response.Content.ReadAsAsync<IEnumerable<PlayerDTO>>().Result;
-
-            return View(players);
+            IEnumerable<TeamDTO> teams = response.Content.ReadAsAsync<IEnumerable<TeamDTO>>().Result;
+            return View(teams);
         }
     }
 }

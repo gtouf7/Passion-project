@@ -29,7 +29,7 @@ namespace Passion_Project.Controllers
 
             [HttpGet]
             [Route("api/TeamData/ListTeams")]
-            public List<TeamDTO> ListTeams()
+            public IHttpActionResult ListTeams()
             {
                 //teams list output
                 List<Team> Teams = db.Teams.ToList();
@@ -47,13 +47,14 @@ namespace Passion_Project.Controllers
 
                     TeamDTOs.Add(Dto);
                 }
-                return TeamDTOs;
+                return Ok(TeamDTOs);
             }
 
             //FIND A TEAM BY ID
             //GET: api/TeamData/FindTeam/{id}
             [ResponseType(typeof(Team))]
             [HttpGet]
+            [Route("api/TeamData/FindTeam/{id}")]
 
             public IHttpActionResult FindTeam(int id)
             {
